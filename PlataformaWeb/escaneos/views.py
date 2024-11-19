@@ -2,13 +2,12 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Caja
-from .serializers import CajaSerializer
-
+from .models import RegistroCaja
+from .serializers import RegistroCajaSerializer
 @api_view(['POST'])
 def recibir_escaneo(request):
     if request.method == 'POST':
-        serializer = CajaSerializer(data=request.data)
+        serializer = RegistroCajaSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)

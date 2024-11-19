@@ -1,8 +1,8 @@
 # En serializers.py
 from rest_framework import serializers
-from .models import Caja
+from .models import RegistroCaja
 
-class CajaSerializer(serializers.ModelSerializer):
+class RegistroCajaSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Caja
+        model = RegistroCaja
         fields = ['caja', 'sello1', 'sello2', 'codigo', 'cantidad']
